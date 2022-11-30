@@ -29,6 +29,13 @@ int main() {
 			}
 		}
 	}
+	for (int i = 0; i < count; i++) {
+		for (int j = 0; j < count; j++) {
+			if (i > j) {
+				nums[i][j] = 1 / nums[j][i];
+			}
+		}
+	}
 	cout << "Itogovaya matrica: " << endl;
 	for (int i = 0; i < count; i++) {
 		for (int j = 0; j < count; j++) {
