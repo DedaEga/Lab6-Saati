@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -39,7 +41,8 @@ int main() {
 	cout << "Itogovaya matrica: " << endl;
 	for (int i = 0; i < count; i++) {
 		for (int j = 0; j < count; j++) {
-			cout << nums[i][j] << "	";
+			cout << fixed << setprecision(3) << nums[i][j] << "	";
+
 		}
 		cout << endl;
 	}
