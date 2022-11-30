@@ -8,11 +8,11 @@ int main() {
 	int count;
 	cout << "Vvedite kolichestvo kriteriev: ";
 	cin >> count;
-	double** nums = new double* [count];
+	double** nums = new double* [count];		
 	for (int i = 0; i < count; i++) {
 		nums[i] = new double[count];
 	}
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++) {				//Zapolnenie matricy
 		for (int j = 0; j < count; j++) {
 			if (i == j) {
 				nums[i][j] = 1;
@@ -31,7 +31,7 @@ int main() {
 			}
 		}
 	}
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++) {			//Raschyot protivopolozhnyh znachenij
 		for (int j = 0; j < count; j++) {
 			if (i > j) {
 				nums[i][j] = 1 / nums[j][i];
@@ -41,19 +41,19 @@ int main() {
 	vector<double> vec;
 	double sum = 0;
 	cout << "Itogovaya matrica: " << endl;
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++) {			//Vyvod matricy
 		for (int j = 0; j < count; j++) {
 			cout << fixed << setprecision(3) << nums[i][j] << "	";
 			sum += nums[i][j];
 		}
-		vec.push_back(sum);
+		vec.push_back(sum);		//Summa strok 
 		sum = 0;
 		cout << endl;
 	}
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++) {	//Summa vsej matricy 
 		sum += vec[i];
 	}
-	cout << "Vesovye koefficienty: ";
+	cout << "Vesovye koefficienty: ";	//Vyvod vesovyh koefficientov
 	for (int i = 0; i < count; i++) {
 		cout << i + 1 << " - " << vec[i] / sum << ", ";
 	}
