@@ -21,7 +21,7 @@ int main() {
 				while (true) {
 					cout << "Vvedite koefficient sravneniya " << i + 1 << " s " << j + 1 << "(ot 0 do 9): ";
 					cin >> nums[i][j];
-					if ((nums[i][j] > 9) or (nums[i][j] < 0)) {
+					if ((nums[i][j] > 9) or (nums[i][j] <= 0)) {
 						cout << "Nedopustimoe znachenie, poprobujte eshchyo raz\n";
 					}
 					else {
@@ -43,7 +43,7 @@ int main() {
 	cout << "Itogovaya matrica: " << endl;
 	for (int i = 0; i < count; i++) {			//Vyvod matricy
 		for (int j = 0; j < count; j++) {
-			cout << fixed << setprecision(3) << nums[i][j] << "	";
+			cout << fixed << setprecision(2) << nums[i][j] << "	";
 			sum += nums[i][j];
 		}
 		vec.push_back(sum);		//Summa strok 
