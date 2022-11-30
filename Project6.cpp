@@ -38,12 +38,23 @@ int main() {
 			}
 		}
 	}
+	vector<double> vec;
+	double sum = 0;
 	cout << "Itogovaya matrica: " << endl;
 	for (int i = 0; i < count; i++) {
 		for (int j = 0; j < count; j++) {
 			cout << fixed << setprecision(3) << nums[i][j] << "	";
-
+			sum += nums[i][j];
 		}
+		vec.push_back(sum);
+		sum = 0;
 		cout << endl;
+	}
+	for (int i = 0; i < count; i++) {
+		sum += vec[i];
+	}
+	cout << "Vesovye koefficienty: ";
+	for (int i = 0; i < count; i++) {
+		cout << i + 1 << " - " << vec[i] / sum << ", ";
 	}
 }
